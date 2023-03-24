@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "name": "Adam ",
+      "bankName": "Jago",
+      "rekeningNumber": "018237864",
+      "isFavorite": true
+    },
+    {
+      "name": "Bernadett ",
+      "bankName": "BCA",
+      "rekeningNumber": "018237864",
+      "isFavorite": true
+    },
+    {
+      "name": "Cipta ",
+      "bankName": "GoPay",
+      "rekeningNumber": "018237864"
+    },
+    {"name": "Adam 1", "bankName": "Jago", "rekeningNumber": "018237864"},
+    {"name": "Bernadett 1", "bankName": "BCA", "rekeningNumber": "018237864"},
+    {
+      "name": "Cipta 1",
+      "bankName": "GoPay",
+      "rekeningNumber": "018237864",
+      "isFavorite": true
+    },
+    {"name": "Adam 2", "bankName": "Jago", "rekeningNumber": "018237864"},
+    {"name": "Bernadett 2", "bankName": "BCA", "rekeningNumber": "018237864"},
+    {"name": "Cipta 2", "bankName": "GoPay", "rekeningNumber": "018237864"},
+    {"name": "Adam 3", "bankName": "Jago", "rekeningNumber": "018237864"},
+    {"name": "Bernadett 3", "bankName": "BCA", "rekeningNumber": "018237864"},
+    {"name": "Cipta 3", "bankName": "GoPay", "rekeningNumber": "018237864"}
+  ]
+}
