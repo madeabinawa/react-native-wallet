@@ -41,7 +41,6 @@ export function Login() {
         />
 
         <Input
-          autoFocus
           disableClearInput
           secureTextEntry
           placeholder="Password"
