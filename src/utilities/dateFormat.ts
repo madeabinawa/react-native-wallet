@@ -13,6 +13,7 @@ export const dateFormat = (date: string | undefined, format: FormatType) => {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
+      weekday: 'long',
     }).format(parseDate),
   };
 
