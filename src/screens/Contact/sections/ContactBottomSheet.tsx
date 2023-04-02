@@ -27,7 +27,7 @@ export function ContactBottomSheet({
       backgroundStyle={
         isDarkMode ? styles.darkContainer : styles.lightContainer
       }>
-      <View className="bg-slate-200 dark:bg-[#311167] px-2 flex flex-col">
+      <View className="bg-[#f3f2f8] dark:bg-[#311167] px-2 flex flex-col">
         <Text className="text-slate-700 dark:text-white text-2xl">
           {contact?.name}
         </Text>
@@ -58,7 +58,7 @@ export function ContactBottomSheet({
 
 const styles = StyleSheet.create({
   lightContainer: {
-    backgroundColor: '#dee7f0',
+    backgroundColor: '#f3f2f8',
   },
   darkContainer: {
     backgroundColor: '#311167',

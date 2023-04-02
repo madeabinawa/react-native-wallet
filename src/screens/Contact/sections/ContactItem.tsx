@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import IonIcons from 'react-native-vector-icons/Ionicons';
 
 import {IContact} from '@types';
@@ -15,7 +15,11 @@ export function ContactItem({contact, onTap}: ContactItemProps) {
       className="flex flex-row justify-between items-center m-2 "
       onPress={() => onTap(contact)}>
       <View className="flex flex-row items-center">
-        <View className="w-11 h-11 rounded-full bg-white mr-2" />
+        <Image
+          className="w-11 h-11 rounded-full bg-cover mr-2"
+          source={{uri: contact.avatar}}
+        />
+
         <View className="flex flex-col">
           <Text className="text-base text-slate-700 dark:text-white -mt-1">
             {contact.name}

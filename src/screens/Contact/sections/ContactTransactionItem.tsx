@@ -1,7 +1,8 @@
 import React from 'react';
-import {TouchableOpacity, View, Text} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {toDollarCurrency, dateFormat} from '@utilities';
+
+import {dateFormat, toDollarCurrency} from '@utilities';
 
 export type StatusContactTransactionItem = 'send' | 'receive';
 

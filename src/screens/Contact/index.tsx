@@ -1,20 +1,25 @@
-import React, {useCallback, useMemo, useRef, useState} from 'react';
-import {View, TextInput, TouchableOpacity} from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import BottomSheet, {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import {RefreshControl, TextInput, TouchableOpacity, View} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {useDispatch, useSelector} from 'react-redux';
 
-import Contacts from '@assets/datas/contacts.json';
-import {BottomNavigationLayout} from '@components';
-import {IContact} from '@types';
+import {BottomNavigationLayout, LoadingContainer} from '@components';
 import {useDarkMode} from '@hooks';
-
-import {ContactCategories, ContactItem, ContactBottomSheet} from './sections';
+import {RootState} from '@redux';
+import {IContact} from '@types';
+import {getContactFetch} from './ContactSlice';
+import {ContactBottomSheet, ContactCategories, ContactItem} from './sections';
 
 export type TabType = '' | 'all' | 'favorites';
 
-const Contact = () => {
-  const DATA: IContact[] = Contacts.data;
+export const Contact = () => {
+  const {contacts, isLoading} = useSelector(
+    (state: RootState) => state.contacts,
+  );
+  const dispatch = useDispatch();
+
   const {isDarkMode} = useDarkMode();
   const [tab, setTab] = useState<TabType>('all');
   const [key, setKey] = useState('');
@@ -29,8 +34,8 @@ const Contact = () => {
   );
 
   const memoizedData = useMemo(
-    () => filterTab(DATA.filter(c => c.name.includes(key))),
-    [key, filterTab, DATA],
+    () => filterTab(contacts.filter(c => c.name.includes(key))),
+    [key, filterTab, contacts],
   );
 
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -42,10 +47,20 @@ const Contact = () => {
 
   const clearInput = () => setKey('');
 
+  useEffect(() => {
+    dispatch(getContactFetch());
+  }, [dispatch]);
+
   return (
     <GestureHandlerRootView>
       <BottomSheetModalProvider>
-        <BottomNavigationLayout>
+        <BottomNavigationLayout
+          refreshControl={
+            <RefreshControl
+              refreshing={false}
+              onRefresh={() => dispatch(getContactFetch())}
+            />
+          }>
           <View className="bg-slate-200 dark:bg-[#311167] mx-2 px-8 flex flex-row justify-center items-center rounded-xl">
             <Ionicons
               name="ios-search-outline"
@@ -71,14 +86,17 @@ const Contact = () => {
 
           <ContactCategories selectedTab={tab} onChangeTab={setTab} />
 
-          {memoizedData.map((item, index) => (
-            <ContactItem
-              key={`${item.name}${index}`}
-              contact={item}
-              onTap={expandBottomSheet}
-            />
-          ))}
+          <LoadingContainer loading={isLoading}>
+            {memoizedData.map((item, index) => (
+              <ContactItem
+                key={`${item.name}${index}`}
+                contact={item}
+                onTap={expandBottomSheet}
+              />
+            ))}
+          </LoadingContainer>
         </BottomNavigationLayout>
+
         <ContactBottomSheet
           contact={selectedContact}
           bottomSheetRef={bottomSheetRef}
@@ -87,5 +105,3 @@ const Contact = () => {
     </GestureHandlerRootView>
   );
 };
-
-export default Contact;
