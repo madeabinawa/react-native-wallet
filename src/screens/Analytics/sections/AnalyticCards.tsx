@@ -30,7 +30,7 @@ export function AnalyticCard({item}: AnalyticCardsProps) {
 
       <View className="flex flex-row justify-between items-start">
         <Text className={`${item.textColor} text-2xl mb-2 leading-[29px]`}>
-          {toDollarCurrency(item.amount)}
+          {toDollarCurrency(item?.amount)}
         </Text>
       </View>
     </View>
