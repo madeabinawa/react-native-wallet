@@ -1,20 +1,23 @@
 import React, {useState} from 'react';
-import {SafeAreaView, View, Text} from 'react-native';
+import {Keyboard, SafeAreaView, Text, View} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {Input, ButtonPressable} from '@components';
-import {useDarkMode} from 'src/hooks';
-import {useNavigation} from '@react-navigation/native';
+import {useDispatch} from 'react-redux';
 
-export interface LoginProps {}
+import {ButtonPressable, Input} from '@components';
+import {useAuth, useDarkMode} from '@hooks';
+import {loginRequest} from './AuthSlice';
 
 export function Login() {
-  const navigation = useNavigation();
+  const dispatch = useDispatch();
+
+  const {isLoadingAuth, errorMessage} = useAuth();
   const {isDarkMode} = useDarkMode();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const onPressLogin = () => {
-    navigation.navigate('Home');
+    Keyboard.dismiss();
+    dispatch(loginRequest({username, password}));
   };
 
   return (
@@ -26,6 +29,7 @@ export function Login() {
 
         <Input
           autoFocus
+          autoCapitalize="none"
           placeholder="Username"
           value={username}
           containerClassName="mb-4"
@@ -56,11 +60,19 @@ export function Login() {
         />
 
         <ButtonPressable
+          disabled={!username || !password}
+          isLoading={isLoadingAuth}
           containerClassName="w-full mt-4"
           textClassName="font-bold"
           text="Login"
           onPress={onPressLogin}
         />
+
+        {!!errorMessage && (
+          <Text className="text-sx text-red-500 mt-2 text-left">
+            {errorMessage}
+          </Text>
+        )}
       </View>
     </SafeAreaView>
   );
