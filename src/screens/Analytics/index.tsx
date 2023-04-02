@@ -1,8 +1,8 @@
 import React from 'react';
-import {Text, View, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 
-import {DebitCard} from '../../components';
-import {BottomNavigationLayout} from '../../components/Navigation';
+import {DebitCard, HeaderNavigation} from '@components';
+import {useAuth} from '@hooks';
 import {AnalyticsList} from './sections';
 
 export interface IAnalyticsItem {
@@ -17,6 +17,7 @@ export interface IAnalyticsItem {
 }
 
 export function Analytics() {
+  const {name, cardNumber} = useAuth();
   const data: IAnalyticsItem[] = [
     {
       id: '1',
@@ -44,7 +45,7 @@ export function Analytics() {
       bgColor: 'bg-[#311167]',
       textColor: 'text-white',
       height: 'h-40 my-3',
-      name: 'Perfomance',
+      name: 'Loan',
       amount: 0,
     },
     {
@@ -53,14 +54,14 @@ export function Analytics() {
       bgColor: 'bg-[#17062a]',
       textColor: 'text-white',
       height: 'h-48 my-3',
-      name: 'Expenses Category',
+      name: 'Debt',
       amount: 0,
     },
   ];
 
   return (
-    <BottomNavigationLayout>
-      <DebitCard disabled />
+    <HeaderNavigation backButton title="Analytics">
+      <DebitCard disabled name={name} cardNumber={cardNumber} />
 
       <View className="w-full flex flex-col mt-8">
         <View className="flex flex-row justify-between px-3">
@@ -73,6 +74,6 @@ export function Analytics() {
         </View>
       </View>
       <AnalyticsList data={data} />
-    </BottomNavigationLayout>
+    </HeaderNavigation>
   );
 }

@@ -1,11 +1,13 @@
 import React from 'react';
-import {Pressable, PressableProps, Text} from 'react-native';
+import {ActivityIndicator, Pressable, PressableProps, Text} from 'react-native';
 
 export interface ButtonPressableProps extends PressableProps {
   containerClassName?: string;
   textClassName?: string;
   text?: string;
   onPress: () => void;
+  isLoading?: boolean;
+  disabled?: boolean;
 }
 
 export function ButtonPressable({
@@ -13,14 +15,21 @@ export function ButtonPressable({
   containerClassName,
   textClassName,
   text,
+  isLoading,
+  disabled,
   ...rest
 }: ButtonPressableProps) {
   return (
     <Pressable
-      className={`${containerClassName} bg-[#311167] dark:bg-[#271a3c] h-10 flex flex-col justify-center items-center rounded-lg`}
+      disabled={isLoading || disabled}
+      className={`${containerClassName} bg-[#311167] dark:bg-[#271a3c] h-10 flex flex-row justify-center items-center rounded-lg`}
       onPress={onPress}
       {...rest}>
-      <Text className={`${textClassName} text-slate-100`}>{text}</Text>
+      {isLoading ? (
+        <ActivityIndicator />
+      ) : (
+        <Text className={`${textClassName} text-slate-100`}>{text}</Text>
+      )}
     </Pressable>
   );
 }
