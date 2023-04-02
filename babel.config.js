@@ -21,9 +21,12 @@ module.exports = {
         alias: {
           '@assets': './src/assets',
           '@components': './src/components',
-          '@utilities': './src/utilities',
           '@hooks': './src/hooks',
+          '@redux': './src/redux',
+          '@routes': './src/routes',
+          '@screens': './src/screens',
           '@types': './src/types',
+          '@utilities': './src/utilities',
         },
       },
     ],
