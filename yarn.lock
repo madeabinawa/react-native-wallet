@@ -6263,6 +6263,11 @@ react-native-codegen@^0.71.3:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
+react-native-flipper@^0.187.1:
+  version "0.187.1"
+  resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.187.1.tgz#1d9be0046effe07f4ae73899aa8a4e30474fb262"
+  integrity sha512-YN9Qql7ypL6UduJpHa5oF4573ls3vW1Q4YY8v7Zzpf5SYf9cscPb9vDgBuG8ktW/+bebOiE6wiIbmHy5wfF3Eg==
+
 react-native-gesture-handler@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.9.0.tgz#2f63812e523c646f25b9ad660fc6f75948e51241"
@@ -6278,6 +6283,11 @@ react-native-gradle-plugin@^0.71.14:
   version "0.71.14"
   resolved "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.14.tgz"
   integrity sha512-nnLawTZEPPRAKq92UqDkzoGgCBl9aa9zAihFHMwmwzn4WRVdK4O6Cd4XYiyoNOiQzx3Hh9k5WOckHE80C92ivQ==
+
+react-native-mmkv-storage@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/react-native-mmkv-storage/-/react-native-mmkv-storage-0.9.1.tgz#0db7e8c1726713dce68704bb8795dc64096c8cbb"
+  integrity sha512-FzSx4PKxK2ocT/OuKGlaVziWZyQYHYLUx9595i1oXY263C5mG19PN5RiBgEGL2S5lK4VGUCzO85GAcsrNPtpOg==
 
 react-native-reanimated@2.14.4:
   version "2.14.4"
@@ -6444,6 +6454,11 @@ recast@^0.20.4:
     esprima "~4.0.0"
     source-map "~0.6.1"
     tslib "^2.0.1"
+
+redux-persist@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/redux-persist/-/redux-persist-6.0.0.tgz#b4d2972f9859597c130d40d4b146fecdab51b3a8"
+  integrity sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ==
 
 redux-saga@^1.2.3:
   version "1.2.3"
@@ -6645,6 +6660,11 @@ rimraf@~2.6.2:
   integrity sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==
   dependencies:
     glob "^7.1.3"
+
+rn-mmkv-storage-flipper@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/rn-mmkv-storage-flipper/-/rn-mmkv-storage-flipper-1.1.1.tgz#6bfdda49656d2c19b3aa7eb464ce95ba882c5b69"
+  integrity sha512-ufJ1PnUNGMgoSv5xpi428bimoBD4FLBwTfqwP8TXavzG3Pz2tD6U3SptamJdTFUYdymDkVlMNz6BqKhTk/5UMQ==
 
 run-parallel@^1.1.9:
   version "1.2.0"
