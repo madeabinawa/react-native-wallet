@@ -5,6 +5,8 @@ import {useDispatch} from 'react-redux';
 
 import {ButtonPressable, Input} from '@components';
 import {useAuth, useDarkMode} from '@hooks';
+import TransferMoney from '@assets/svgs/transfer_money.svg';
+
 import {loginRequest} from './AuthSlice';
 
 export function Login() {
@@ -22,8 +24,10 @@ export function Login() {
 
   return (
     <SafeAreaView>
-      <View className="w-full h-full px-10 bg-[#f3f2f8] dark:bg-[#17062a] pt-2 dark flex flex-col justify-center items-center">
-        <Text className="text-3xl font-bold dark:text-white self-start mb-4">
+      <View className="w-full h-full px-10 bg-[#f3f2f8] dark:bg-[#17062a] pt-2 dark flex flex-col justify-start items-center">
+        <TransferMoney width={200} height={200} className="mt-20" />
+
+        <Text className="text-3xl font-bold dark:text-white self-start mt-10 mb-4">
           Login
         </Text>
 
