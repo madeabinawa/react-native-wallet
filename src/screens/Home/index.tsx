@@ -1,16 +1,19 @@
 import React, {useState} from 'react';
 import {Text, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 
-import {DebitCard, BottomNavigationLayout} from '@components';
+import {BottomNavigationLayout, DebitCard} from '@components';
 import {ITransaction} from '@types';
-import {BalanceInfo, RecentTransactions, UserGreeting} from './sections';
-import {ModalNotifications} from './sections/ModalNotifications';
-
-export interface HomescreenProps {}
+import {useAuth, useNavigate} from '@hooks';
+import {
+  BalanceInfo,
+  RecentTransactions,
+  UserGreeting,
+  ModalNotifications,
+} from './sections';
 
 export function Home() {
-  const navigation = useNavigation();
+  const navigation = useNavigate();
+  const {cardNumber, name} = useAuth();
   const TODAY = new Date();
   const DATA: ITransaction[] = [
     {
@@ -46,9 +49,18 @@ export function Home() {
           My Debit Cards
         </Text>
       </View>
+
       <BalanceInfo />
-      <DebitCard onPress={() => navigation.navigate('Analytics')} />
+
+      <DebitCard
+        obscuredNumber
+        name={name}
+        cardNumber={cardNumber}
+        onPress={() => navigation.navigate('Analytics')}
+      />
+
       <RecentTransactions data={DATA} />
+
       <ModalNotifications
         visible={visible}
         closeModal={() => setVisible(false)}
@@ -56,3 +68,5 @@ export function Home() {
     </BottomNavigationLayout>
   );
 }
+
+export default Home;

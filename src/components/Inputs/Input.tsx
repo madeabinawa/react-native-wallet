@@ -1,13 +1,13 @@
-import React, {useState, ReactNode} from 'react';
+import React, {ReactNode, useState} from 'react';
 import {
-  View,
   Text,
   TextInput,
   TextInputProps,
   TouchableOpacity,
+  View,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {useDarkMode} from 'src/hooks';
+import {useDarkMode} from '@hooks';
 
 export interface InputProps extends Omit<TextInputProps, 'className'> {
   placeholder?: string;

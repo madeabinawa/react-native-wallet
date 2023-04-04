@@ -11,9 +11,12 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components": ["src/components/index.ts"],
-      "@utilities": ["src/utilities/index.ts"],
       "@hooks": ["src/hooks/index.ts"],
-      "@types": ["src/types/index.ts"]
+      "@redux": ["src/redux/index.ts"],
+      "@routes": ["src/routes/index.tsx"],
+      "@screens": ["src/screens/index.ts"],
+      "@types": ["src/types/index.ts"],
+      "@utilities": ["src/utilities/index.ts"]
     }
   }
 }
