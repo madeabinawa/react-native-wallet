@@ -2,7 +2,7 @@
 
 A very minimal feature wallet application built with React Native for showcase purposes.
 
-![Walts](https://raw.githubusercontent.com/madeabinawa/react-native-wallet/dev/src/assets/docs/docs_sm.png?token=GHSAT0AAAAAACAGN2ILLIGA577P63KKXKEGZBQDJ4Q)
+![Walts](https://github.com/madeabinawa/react-native-wallet/blob/dev/src/assets/docs/docs_sm.png)
 
 ## Getting Started
 
