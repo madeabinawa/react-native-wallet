@@ -40,3 +40,8 @@ Walts has the following main dependencies:
 ## Credit
 
 [One Week Wonders](https://dribbble.com/shots/20903172-Banking-Apps?utm_source=Clipboard_Shot&utm_campaign=tosangarditama&utm_content=Banking%20Apps&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=tosangarditama&utm_content=Banking%20Apps&utm_medium=Social_Share)
+
+## Demo
+
+username: `johndoe`
+password: `123456`
