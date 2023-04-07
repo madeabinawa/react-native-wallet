@@ -15,6 +15,7 @@
       "@redux": ["src/redux/index.ts"],
       "@routes": ["src/routes/index.tsx"],
       "@screens": ["src/screens/index.ts"],
+      "@services": ["src/services/index.ts"],
       "@types": ["src/types/index.ts"],
       "@utilities": ["src/utilities/index.ts"]
     }
