@@ -9,17 +9,51 @@ A very minimal feature wallet application built with React Native for showcase p
 To get started follow these steps:
 
 1. Clone the repository to your local machine using the following command:
-   `git clone https://github.com/madeabinawa/react-native-wallet.git`
+   ```bash 
+   git clone https://github.com/madeabinawa/react-native-wallet.git
+   ```
 
-2. Install the necessary dependencies using `npm install` or `yarn`.
+2. Install the necessary dependencies using 
+   ``` bash
+   npm install
+   ```
+   or
+   ```bash
+   yarn
+   ```
 
-3. Start the application using `npm start` or `yarn start`.
+3. Start the application using 
+   ```bash 
+   npm start
+   ``` 
+   or 
+   ```bash 
+   yarn start
+   ```
 
-4. Run the application on an Android device or emulator using `npm run android` or `yarn android`.
+4. Run the application on an Android device or emulator using 
+   ```bash 
+   npm run android
+   ``` 
+   or 
+   ```bash
+   yarn android
+   ```
 
-5. If you prefer to run the application on iOS simulator, use these following command `npm run ios` or `yarn ios`.
+5. If you prefer to run the application on iOS simulator, use these following command 
+   ```bash
+   npm run ios
+   ``` 
+   or 
+   ```bash 
+   yarn ios
+   ```
 
-   Note: Before you run the application on iOS simulator, make sure run `pod install` in `/ios` directory.
+   Note: Before you run the application on iOS simulator, make sure run 
+   ```bash 
+   pod install
+   ``` 
+   in `/ios` directory.
 
 ## Dependencies
 
