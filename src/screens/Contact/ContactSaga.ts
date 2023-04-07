@@ -1,15 +1,13 @@
 import {call, delay, put, takeEvery} from 'redux-saga/effects';
 import {getContactSuccess} from './ContactSlice';
+
+import {services} from '@services';
 import {IContact} from '@types';
 
 function* workGetContactsFetch(): any {
-  const contacts = yield call(() =>
-    fetch('https://641b9a041f5d999a4466380c.mockapi.io/api/v1/contacts'),
-  );
+  const contacts = yield call(() => services.get('/contacts'));
 
-  const contactsFormat = yield contacts.json();
-
-  const mapToContact: IContact[] = contactsFormat?.map((c: any) => ({
+  const mapToContact: IContact[] = contacts?.data?.map((c: any) => ({
     avatar: c.avatar,
     name: c.name,
     bankName: c.bank_name,

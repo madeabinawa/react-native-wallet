@@ -4,6 +4,20 @@ module.exports = {
     'nativewind/babel',
     ['react-native-reanimated/plugin', {relativeSourceLocation: true}],
     [
+      'module:react-native-dotenv',
+      {
+        envName: 'APP_ENV',
+        moduleName: '@env',
+        path: '.env',
+        blocklist: null,
+        allowlist: null,
+        safe: false,
+        allowUndefined: false,
+        verbose: false,
+      },
+    ],
+
+    [
       'module-resolver',
       {
         extensions: [
@@ -25,6 +39,7 @@ module.exports = {
           '@redux': './src/redux',
           '@routes': './src/routes',
           '@screens': './src/screens',
+          '@services': './src/services',
           '@types': './src/types',
           '@utilities': './src/utilities',
         },

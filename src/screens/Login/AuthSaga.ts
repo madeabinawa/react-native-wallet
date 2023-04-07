@@ -1,6 +1,7 @@
-import {call, put, takeEvery} from 'redux-saga/effects';
 import {PayloadAction} from '@reduxjs/toolkit';
+import {call, put, takeEvery} from 'redux-saga/effects';
 
+import {services} from '@services';
 import {IUser} from '@types';
 import {getUserFailed, GetUserFetchType, getUserSuccess} from './AuthSlice';
 
@@ -10,13 +11,9 @@ interface IUserPassword extends IUser {
 
 function* workGetUserFetch(action: PayloadAction<GetUserFetchType>): any {
   try {
-    const users = yield call(() =>
-      fetch('https://641b9a041f5d999a4466380c.mockapi.io/api/v1/users'),
-    );
+    const users = yield call(() => services.get('/users'));
 
-    const usersFormat = yield users.json();
-
-    const mapUsers: IUserPassword[] = usersFormat?.map((u: any) => ({
+    const mapUsers: IUserPassword[] = users?.data?.map((u: any) => ({
       name: u.name,
       avatar: u.avatar,
       balance: u.balance,
